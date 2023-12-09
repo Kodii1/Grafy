@@ -1,7 +1,5 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Main {
@@ -9,12 +7,6 @@ public class Main {
         InputScanner inputScanner = new InputScanner();
         List < List < Integer > > matrix = inputScanner.getMatrix();
         Integer startVertex = inputScanner.getStartVertex();
-        List < Integer > diameter = new ArrayList<>();
-        for(int i = 0; i < matrix.size(); i++){
-            Dijkstra dijkstra = new Dijkstra( matrix, i);
-            diameter.add(dijkstra.getLongestShortestPath());
-        }
-        diameter.sort(Collections.reverseOrder());
-
+        Dijkstra dijkstra = new Dijkstra( matrix, startVertex - 1);
     }
 }

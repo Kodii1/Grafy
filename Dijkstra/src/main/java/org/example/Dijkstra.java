@@ -16,7 +16,7 @@ public class Dijkstra {
         this.distance.set(startVertex ,0);
         this.visited = new boolean[graph.size()];
         dijkstra();
-//        printResult();
+        printResult();
     }
     private void dijkstra (){
         for (int i = 0; i < graph.size(); i++) {
@@ -45,20 +45,9 @@ public class Dijkstra {
         }
         return minIndex;
     }
-//    private void printResult(){
-//        for( int i =0; i < distance.size(); i++){
-//            System.out.println(i+1 + " = " + distance.get(i));
-//        }
-//    }
-    public int getLongestShortestPath() {
-        int diameter = 0;
-
-        for (int i = 0; i < distance.size(); i++) {
-            if (distance.get(i) > diameter) {
-                diameter = distance.get(i);
-            }
+    private void printResult(){
+        for( int i =0; i < distance.size(); i++){
+            System.out.println(i+1 + " = " + distance.get(i));
         }
-
-        return diameter;
     }
 }
